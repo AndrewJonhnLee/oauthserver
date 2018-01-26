@@ -49,13 +49,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .anonymous().disable()
                 .authorizeRequests()
-                .antMatchers("/api-docs/**").permitAll();
+                .antMatchers("/api-docs/**").permitAll()
+                .and().formLogin();
     }
 
 //    @Bean
 //    public TokenStore tokenStore() {
 //        return new InMemoryTokenStore();
 //    }
+
+
+
+
+
+
 
     @Bean
     @Autowired
